@@ -11,74 +11,58 @@ import java.time.Duration;
 
 public class LoginPage extends SeleniumTestBase {
 
+    // Locators
+    private By tf_email = By.id("email");
+    private By tf_password = By.id("password");
+    private By btn_login = By.xpath("//button[text()='Sign In with Email']");
+    private By lbl_error = By.xpath("//div[text()='Invalid email or password' and contains(@class,'text-sm')]");
+    private By dashboard_main = By.id("dashboardMain"); // Replace with actual dashboard locator
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    // Locators
-    By tf_email = By.xpath("//input[@id='email']");
-    By tf_password = By.xpath("//input[@id='password']");
-    By btn_login = By.xpath("//button[@type='submit']");
-
-    // ✅ FIXED (flexible XPath)
-    By lbl_error = By.xpath("//div[@role='alert']");
-
-    // Actions
+    // Fill login form
     public void fillEmail(String email) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement emailField = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(By.id("email"))
-        );
-        emailField.clear();
-        emailField.sendKeys(email);
+        driver.findElement(tf_email).clear();
+        driver.findElement(tf_email).sendKeys(email);
     }
 
     public void fillPassword(String password) {
-        type(tf_password, password);
+        driver.findElement(tf_password).clear();
+        driver.findElement(tf_password).sendKeys(password);
     }
 
-    public void clickLogin() {
-        click(btn_login);
+    // Click login button
+    public void clickLoginButton() {
+        driver.findElement(btn_login).click();
     }
 
-    public void login(String email, String password) {
-        fillEmail(email);
-        fillPassword(password);
-        clickLogin();
+    // Submit form (for browser validation)
+    public void submitLoginForm() {
+        driver.findElement(tf_email).submit();
     }
 
-    // 🔥 System error (API / backend)
-    public String getErrorMessage(){
+    // Get HTML5 browser validation message
+    public String getEmailValidationMessage() {
+        return driver.findElement(tf_email).getAttribute("validationMessage");
+    }
 
+    // Get system error message
+    public String getErrorMessage() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-            WebElement error = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(lbl_error)
-            );
-
-            return error.getText();
-
+            WebElement errorMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(lbl_error));
+            return errorMsg.getText();
         } catch (Exception e) {
-            return null; // safe fallback
+            return null;
         }
     }
 
-    // 🔥 Browser validation
-    public String getEmailValidationMessage() {
-        return driver.findElement(tf_email)
-                .getAttribute("validationMessage");
-    }
-
-    // Success check
-    public boolean isDashboardLoaded(){
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+    // Check if dashboard is loaded
+    public boolean isDashboardLoaded() {
         try {
-            return wait.until(
-                    ExpectedConditions.urlContains("dashboard")
-            );
+            return driver.findElement(dashboard_main).isDisplayed();
         } catch (Exception e) {
             return false;
         }

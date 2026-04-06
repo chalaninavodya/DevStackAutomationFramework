@@ -6,9 +6,12 @@ import com.devstack.automation.pages.commons.LoginPage;
 import com.devstack.automation.tests.BaseTest;
 import com.devstack.automation.utils.ExcelHandler;
 import com.devstack.automation.utils.PropertyHandler;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITest;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class LoginTest extends BaseTest implements ITest {
 
@@ -17,11 +20,12 @@ public class LoginTest extends BaseTest implements ITest {
     @Test(dataProvider = "commonDataProvider", dataProviderClass = ExcelHandler.class)
     public void loginTest(LoginTestData data) {
 
-        // ✅ Safe dynamic test name
-        testName = data.getTestCaseName() != null && !data.getTestCaseName().isEmpty()
+        // Dynamic test name
+        testName = (data.getTestCaseName() != null && !data.getTestCaseName().isEmpty())
                 ? data.getTestCaseName()
                 : "Login Test";
 
+        // Open login page
         driver.get(PropertyHandler.getProperty("url"));
 
         LIB_Common common = new LIB_Common(driver);
@@ -35,24 +39,28 @@ public class LoginTest extends BaseTest implements ITest {
 
         if (expected.equalsIgnoreCase("success")) {
 
-            Assert.assertTrue(loginPage.isDashboardLoaded(),
-                    "Login should be successful");
+            // Wait until either student or admin dashboard is loaded
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            boolean dashboardLoaded = wait.until(d -> {
+                String url = d.getCurrentUrl();
+                return url.contains("/student/dashboard") || url.contains("/admin/dashboard");
+            });
+
+            Assert.assertTrue(dashboardLoaded, "Login should be successful");
 
         } else {
 
+            // Browser validation check (HTML5)
             if (validationType.equalsIgnoreCase("browser")) {
-
+                loginPage.submitLoginForm();
                 String msg = loginPage.getEmailValidationMessage();
-
-                Assert.assertTrue(msg != null && msg.length() > 0,
+                Assert.assertTrue(msg != null && !msg.isEmpty(),
                         "Browser validation message should appear");
 
             } else {
-
+                // System error message check
                 String errorMsg = loginPage.getErrorMessage();
-
-                // ✅ flexible validation
-                Assert.assertTrue(errorMsg != null && errorMsg.contains("Invalid"),
+                Assert.assertTrue(errorMsg != null && errorMsg.toLowerCase().contains("invalid"),
                         "System error message should appear");
             }
         }
