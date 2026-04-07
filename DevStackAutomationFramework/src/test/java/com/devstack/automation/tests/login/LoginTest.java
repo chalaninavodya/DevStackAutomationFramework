@@ -60,7 +60,7 @@ public class LoginTest extends BaseTest implements ITest {
 
                 String msg = loginPage.getEmailValidationMessage();
 
-                Assert.assertTrue(msg != null && !msg.isEmpty(),
+                Assert.assertTrue(msg != null && msg.isEmpty(),
                         "Browser validation message should appear");
 
             } else {

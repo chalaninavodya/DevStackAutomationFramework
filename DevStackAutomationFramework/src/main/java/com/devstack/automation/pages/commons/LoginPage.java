@@ -18,12 +18,16 @@ public class LoginPage extends SeleniumTestBase {
 
     public void fillEmail(String email) {
         driver.findElement(tf_email).clear();
-        driver.findElement(tf_email).sendKeys(email);
+        if (email != null && !email.isEmpty()) {
+            driver.findElement(tf_email).sendKeys(email);
+        }
     }
 
     public void fillPassword(String password) {
         driver.findElement(tf_password).clear();
-        driver.findElement(tf_password).sendKeys(password);
+        if (password != null && !password.isEmpty()) {
+            driver.findElement(tf_password).sendKeys(password);
+        }
     }
 
     public void clickLoginButton() {

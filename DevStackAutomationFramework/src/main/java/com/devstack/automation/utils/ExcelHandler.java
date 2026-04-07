@@ -54,8 +54,19 @@ public class ExcelHandler {
 
                 for(int i=0; i<headers.size(); i++) {
                     Cell cell = row.getCell(i, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
-                    String cellValue = (cell.getCellType() == CellType.STRING) ?
-                            cell.getStringCellValue() : String.valueOf((int)cell.getNumericCellValue());
+
+
+                    String cellValue;
+
+                    if (cell == null || cell.getCellType() == CellType.BLANK) {
+                        cellValue = "";
+                    } else if (cell.getCellType() == CellType.STRING) {
+                        cellValue = cell.getStringCellValue().trim();
+                    } else if (cell.getCellType() == CellType.NUMERIC) {
+                        cellValue = String.valueOf((int) cell.getNumericCellValue());
+                    } else {
+                        cellValue = cell.toString().trim();
+                    }
 
                     Field field = modelClass.getDeclaredField(headers.get(i));
                     field.setAccessible(true);
