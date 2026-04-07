@@ -23,31 +23,31 @@ public class LIB_Common extends FunctionBase {
         loginPage.fillEmail(email);
         loginPage.fillPassword(password);
 
-        // Click login
-        loginPage.clickLoginButton();
+        // ✅ ONLY click if both values available
+        if (email != null && !email.isEmpty() &&
+                password != null && !password.isEmpty()) {
 
-        // Wait small delay (optional but useful)
-        try { Thread.sleep(2000); } catch (InterruptedException ignored) {}
+            loginPage.clickLoginButton();
+        }
+
+        // Small wait
+        try { Thread.sleep(1500); } catch (InterruptedException ignored) {}
 
         System.out.println("After login URL: " + driver.getCurrentUrl());
 
-        // Check error message
+        // Logging
         String errorMsg = loginPage.getErrorMessage();
         if (!errorMsg.isEmpty()) {
-            ExtentReportManager.writeToReport("Login failed: " + errorMsg);
-        } else {
-            ExtentReportManager.writeToReport("No error message displayed");
+            ExtentReportManager.writeToReport("Login error: " + errorMsg);
         }
 
-        // Email validation
-        String emailValidation = loginPage.getEmailValidationMessage();
-        if (!emailValidation.isEmpty()) {
-            ExtentReportManager.writeToReport("Email validation: " + emailValidation);
+        String validation = loginPage.getEmailValidationMessage();
+        if (!validation.isEmpty()) {
+            ExtentReportManager.writeToReport("Validation: " + validation);
         }
 
-        // Dashboard check
         if (loginPage.isDashboardLoaded()) {
-            ExtentReportManager.writeToReport("Login SUCCESS - Dashboard loaded");
+            ExtentReportManager.writeToReport("Login SUCCESS");
         }
 
         ExtentReportManager.writeToReport("End of tc_login");
