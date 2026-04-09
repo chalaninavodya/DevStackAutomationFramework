@@ -14,9 +14,16 @@ public class SeleniumTestBase {
     protected WebDriver driver;
     protected JavascriptExecutor executor;
 
-    public SeleniumTestBase(WebDriver driver) {
+
+
+    public SeleniumTestBase(){
         this.driver = ThreadLocalWebDriverManager.getDriver();
         this.executor = (JavascriptExecutor) this.driver;
+    }
+
+    public WebElement waitForElement(By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     // 🔥 CLICK
@@ -78,7 +85,6 @@ public class SeleniumTestBase {
         executor.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    
 
     // 🔥 SAFE ELEMENT CHECK (IMPORTANT)
     public boolean isElementPresent(By locator) {
@@ -90,3 +96,4 @@ public class SeleniumTestBase {
         }
     }
 }
+

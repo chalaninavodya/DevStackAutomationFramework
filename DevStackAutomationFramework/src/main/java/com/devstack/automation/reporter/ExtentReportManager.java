@@ -15,6 +15,7 @@ public class ExtentReportManager {
 
     // Use ThreadLocal for thread safety if running tests in parallel
     private static ThreadLocal<ExtentTest> testThread = new ThreadLocal<>();
+    private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
 
     public static void initReport() {
         extentReports = new ExtentReports();
@@ -27,8 +28,9 @@ public class ExtentReportManager {
 
     public static void createTest(String testName) {
         ExtentTest test = extentReports.createTest(testName);
-        testThread.set(test);
+        extentTest.set(test);
     }
+
 
     public static void logPass(String message) {
         if (Objects.nonNull(testThread.get())) {
@@ -49,10 +51,9 @@ public class ExtentReportManager {
     }
 
     public static void writeToReport(String message) {
-        if (Objects.nonNull(testThread.get())) {
-            testThread.get().log(Status.INFO, message);
-        }
+        extentTest.get().info(message);
     }
+
 
     // ✅ Added logInfo method
     public static void logInfo(String message) {
