@@ -2,9 +2,14 @@ package com.devstack.automation.testbase;
 
 import com.devstack.automation.reporter.ExtentReportManager;
 import com.devstack.automation.utils.ThreadLocalWebDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import org.testng.annotations.AfterMethod;
+
+import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 import java.util.List;
@@ -14,6 +19,23 @@ public class SeleniumTestBase {
     protected WebDriver driver;
     protected JavascriptExecutor executor;
 
+
+    @BeforeMethod
+    public void setUp() {
+
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver(); // 🔥 THIS MUST RUN
+
+        driver.manage().window().maximize();
+        driver.get("https://devstacklms.vercel.app/auth/login");
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
 
     public SeleniumTestBase(){

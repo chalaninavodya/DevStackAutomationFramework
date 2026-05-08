@@ -13,7 +13,7 @@ public class LoginPage extends SeleniumTestBase {
     private By dashboard_main = By.id("dashboardMain");
 
     public LoginPage(WebDriver driver) {
-        super(driver);
+        this.driver = driver;
     }
 
     public void fillEmail(String email) {
