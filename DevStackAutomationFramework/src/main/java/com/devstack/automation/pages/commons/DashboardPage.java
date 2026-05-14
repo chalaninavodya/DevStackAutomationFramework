@@ -1,107 +1,148 @@
-package com.devstack.automation.pages.dashboard;
+package com.devstack.automation.pages.commons;
 
+import com.devstack.automation.functions.FunctionBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class DashboardPage {
-
-    private WebDriver driver;
+public class DashboardPage extends FunctionBase {
 
     public DashboardPage(WebDriver driver) {
-        this.driver = driver;
+
+        super(driver);
     }
 
     // 🔥 Header
-    private By dashboardTitle = By.xpath("//h1[contains(text(),'Library Portal')]");
+    private By dashboardTitle =
+            By.xpath("//h1[contains(text(),'Library Portal')]");
+
+    // 📚 Browse Books Sidebar
+    private By btn_browse_books =
+            By.xpath("//a[@href='/student/books' and .//span[normalize-space()='Browse Books']]");
 
     // 🔥 Cards
-    private By activeReservations = By.xpath("//p[contains(text(),'Active Reservations')]/preceding-sibling::p");
-    private By currentBorrowings = By.xpath("//p[contains(text(),'Current Borrowings')]/preceding-sibling::p");
-    private By overdueBooks = By.xpath("//p[contains(text(),'Overdue Books')]/preceding-sibling::p");
+    private By activeReservations =
+            By.xpath("//p[contains(text(),'Active Reservations')]/preceding-sibling::p");
+
+    private By currentBorrowings =
+            By.xpath("//p[contains(text(),'Current Borrowings')]/preceding-sibling::p");
+
+    private By overdueBooks =
+            By.xpath("//p[contains(text(),'Overdue Books')]/preceding-sibling::p");
 
     // 🔥 Member Status
-    private By memberStatus = By.xpath("//p[contains(text(),'Member Status')]/following::p");
+    private By memberStatus =
+            By.xpath("//p[contains(text(),'Member Status')]/following::p");
 
     // 🔥 Profile Section
-    private By profileSection = By.xpath("//h2[contains(text(),'My Profile')]");
-    private By emailText = By.xpath("//p[contains(text(),'@')]");
+    private By profileSection =
+            By.xpath("//h2[contains(text(),'My Profile')]");
+
+    private By emailText =
+            By.xpath("//p[contains(text(),'@')]");
 
     // 🔥 Book Section
-    private By availableBooksTitle = By.xpath("//h2[contains(text(),'Available Books')]");
-    private By searchBox = By.xpath("//input[contains(@placeholder,'Search')]");
-    private By filterGenreBtn = By.xpath("//button[contains(text(),'Genre')]");
-    private By filterAuthorBtn = By.xpath("//button[contains(text(),'Author')]");
+    private By availableBooksTitle =
+            By.xpath("//h2[contains(text(),'Available Books')]");
+
+    private By searchBox =
+            By.xpath("//input[contains(@placeholder,'Search')]");
+
+    private By filterGenreBtn =
+            By.xpath("//button[contains(text(),'Genre')]");
+
+    private By filterAuthorBtn =
+            By.xpath("//button[contains(text(),'Author')]");
 
     // 🔥 Book Card
-    private By bookCard = By.xpath("//div[contains(@class,'book')]");
+    private By bookCard =
+            By.xpath("//div[contains(@class,'book')]");
 
     // 🔥 Pagination
-    private By nextPageBtn = By.xpath("//button[contains(text(),'Next')]");
+    private By nextPageBtn =
+            By.xpath("//button[contains(text(),'Next')]");
 
     // ===========================================
     // ✅ VALIDATIONS
     // ===========================================
 
     public boolean isDashboardLoaded() {
-        return driver.findElement(dashboardTitle).isDisplayed();
+
+        return isElementPresent(dashboardTitle);
     }
 
     public boolean isCardsVisible() {
-        return driver.findElement(activeReservations).isDisplayed()
-                && driver.findElement(currentBorrowings).isDisplayed()
-                && driver.findElement(overdueBooks).isDisplayed();
+
+        return isElementPresent(activeReservations)
+                && isElementPresent(currentBorrowings)
+                && isElementPresent(overdueBooks);
     }
 
     public boolean isMemberActive() {
-        return driver.findElement(memberStatus).isDisplayed();
+
+        return isElementPresent(memberStatus);
     }
 
     public boolean isProfileSectionVisible() {
-        return driver.findElement(profileSection).isDisplayed()
-                && driver.findElement(emailText).isDisplayed();
+
+        return isElementPresent(profileSection)
+                && isElementPresent(emailText);
     }
 
     public boolean isBookSectionVisible() {
-        return driver.findElement(availableBooksTitle).isDisplayed()
-                && driver.findElement(searchBox).isDisplayed();
+
+        return isElementPresent(availableBooksTitle)
+                && isElementPresent(searchBox);
     }
 
     public boolean isBookListLoaded() {
-        return driver.findElements(bookCard).size() > 0;
+
+        return isElementPresent(bookCard);
     }
 
     // ===========================================
-    // ✅ ACTION METHODS (DATA-DRIVEN USE)
+    // ✅ ACTION METHODS
     // ===========================================
 
+    // ✅ CLICK BROWSE BOOKS
+    public void clickBrowseBooks() {
+
+        click(btn_browse_books);
+    }
+
     public void enterSearch(String bookName) {
-        driver.findElement(searchBox).clear();
-        driver.findElement(searchBox).sendKeys(bookName);
+
+        type(searchBox, bookName);
     }
 
     public void clickSearch() {
-        driver.findElement(searchBox).submit();
+
+        waitForVisibilityOfElement(searchBox)
+                .submit();
     }
 
     public void clickFilterGenre() {
-        driver.findElement(filterGenreBtn).click();
+
+        click(filterGenreBtn);
     }
 
     public void clickFilterAuthor() {
-        driver.findElement(filterAuthorBtn).click();
+
+        click(filterAuthorBtn);
     }
 
     public void clickBookCard() {
-        driver.findElement(bookCard).click();
+
+        click(bookCard);
     }
 
     public void clickBorrow() {
-        driver.findElement(By.xpath("//button[contains(text(),'Borrow')]")).click();
+
+        click(By.xpath("//button[contains(text(),'Borrow')]"));
     }
 
     public void goToNextPage() {
-        driver.findElement(nextPageBtn).click();
+
+        click(nextPageBtn);
     }
 }
-
 

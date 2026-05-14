@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Test Automation Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">May 4, 2026 10:32:23 PM</span></a>
+<a href="#"><span class="badge badge-primary">May 13, 2026 09:53:13 PM</span></a>
 </li>
 </ul>
 </div>
@@ -67,6 +67,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,25 +75,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">dashboardDataDrivenTest</p>
             <p class="text-sm">
-              <span>10:32:52 PM</span> / <span>00:00:05:943</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>9:53:53 PM</span> / <span>00:00:05:193</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">dashboardDataDrivenTest</h5>
-<span class='badge badge-success'>05.04.2026 10:32:52 PM</span>
-<span class='badge badge-danger'>05.04.2026 10:32:58 PM</span>
-<span class='badge badge-default'>00:00:05:943</span>
+<h5 class="test-status text-fail">dashboardDataDrivenTest</h5>
+<span class='badge badge-success'>05.13.2026 9:53:53 PM</span>
+<span class='badge badge-danger'>05.13.2026 9:53:58 PM</span>
+<span class='badge badge-default'>00:00:05:193</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -104,23 +105,38 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:32:55 PM</td>
+        <td>9:53:53 PM</td>
+        <td>
+          Running Test Case: TC_DASH_001
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:53:55 PM</td>
         <td>
           Start of tc_login
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:32:58 PM</td>
+        <td>9:53:58 PM</td>
         <td>
-          Login error: Invalid email or password
+          End of tc_login
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>10:32:58 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>9:53:58 PM</td>
         <td>
-          End of tc_login
+          Dashboard verification failed: no such element: Unable to locate element: {"method":"xpath","selector":"//h1[contains(text(),'Library Portal')]"}
+  (Session info: chrome=148.0.7778.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6137fdc36e6339bf5a487edbd5e7099c, findElement {using=xpath, value=//h1[contains(text(),'Library Portal')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.98, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\WW\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63254}, goog:processID: 11648, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63254/devtoo..., se:cdpVersion: 148.0.7778.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6137fdc36e6339bf5a487edbd5e7099c
         </td>
       </tr>
   </tbody>
@@ -128,25 +144,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="2"
+        <li class="test-item"  status="fail" test-id="2"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">dashboardDataDrivenTest</p>
             <p class="text-sm">
-              <span>10:33:21 PM</span> / <span>00:00:03:337</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>9:54:19 PM</span> / <span>00:00:16:748</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">dashboardDataDrivenTest</h5>
-<span class='badge badge-success'>05.04.2026 10:33:21 PM</span>
-<span class='badge badge-danger'>05.04.2026 10:33:25 PM</span>
-<span class='badge badge-default'>00:00:03:337</span>
+<h5 class="test-status text-fail">dashboardDataDrivenTest</h5>
+<span class='badge badge-success'>05.13.2026 9:54:19 PM</span>
+<span class='badge badge-danger'>05.13.2026 9:54:35 PM</span>
+<span class='badge badge-default'>00:00:16:748</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -158,23 +174,38 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:33:22 PM</td>
+        <td>9:54:19 PM</td>
+        <td>
+          Running Test Case: TC_DASH_002
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:54:20 PM</td>
         <td>
           Start of tc_login
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:33:25 PM</td>
+        <td>9:54:35 PM</td>
         <td>
-          Login error: Invalid email or password
+          End of tc_login
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>10:33:25 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>9:54:35 PM</td>
         <td>
-          End of tc_login
+          Card validation failed: no such element: Unable to locate element: {"method":"xpath","selector":"//p[contains(text(),'Active Reservations')]/preceding-sibling::p"}
+  (Session info: chrome=148.0.7778.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7e54c01420e54f0910652dcb1d65963f, findElement {using=xpath, value=//p[contains(text(),'Active Reservations')]/preceding-sibling::p}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.98, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\WW\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63284}, goog:processID: 5740, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63284/devtoo..., se:cdpVersion: 148.0.7778.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7e54c01420e54f0910652dcb1d65963f
         </td>
       </tr>
   </tbody>
@@ -182,25 +213,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="3"
+        <li class="test-item"  status="fail" test-id="3"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">dashboardDataDrivenTest</p>
             <p class="text-sm">
-              <span>10:34:10 PM</span> / <span>00:00:04:018</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>9:54:49 PM</span> / <span>00:00:14:753</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">dashboardDataDrivenTest</h5>
-<span class='badge badge-success'>05.04.2026 10:34:10 PM</span>
-<span class='badge badge-danger'>05.04.2026 10:34:14 PM</span>
-<span class='badge badge-default'>00:00:04:018</span>
+<h5 class="test-status text-fail">dashboardDataDrivenTest</h5>
+<span class='badge badge-success'>05.13.2026 9:54:49 PM</span>
+<span class='badge badge-danger'>05.13.2026 9:55:04 PM</span>
+<span class='badge badge-default'>00:00:14:753</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -212,16 +243,38 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:34:10 PM</td>
+        <td>9:54:49 PM</td>
+        <td>
+          Running Test Case: TC_DASH_003
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:54:49 PM</td>
         <td>
           Start of tc_login
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:34:14 PM</td>
+        <td>9:55:04 PM</td>
         <td>
           End of tc_login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>9:55:04 PM</td>
+        <td>
+          Profile validation failed: no such element: Unable to locate element: {"method":"xpath","selector":"//h2[contains(text(),'My Profile')]"}
+  (Session info: chrome=148.0.7778.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7e50589aa73cfaafcb6b2346fc628e43, findElement {using=xpath, value=//h2[contains(text(),'My Profile')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.98, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\WW\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63308}, goog:processID: 9700, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63308/devtoo..., se:cdpVersion: 148.0.7778.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7e50589aa73cfaafcb6b2346fc628e43
         </td>
       </tr>
   </tbody>
@@ -229,25 +282,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="4"
+        <li class="test-item"  status="fail" test-id="4"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">dashboardDataDrivenTest</p>
             <p class="text-sm">
-              <span>10:35:01 PM</span> / <span>00:00:03:218</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>9:55:15 PM</span> / <span>00:00:09:063</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">dashboardDataDrivenTest</h5>
-<span class='badge badge-success'>05.04.2026 10:35:01 PM</span>
-<span class='badge badge-danger'>05.04.2026 10:35:04 PM</span>
-<span class='badge badge-default'>00:00:03:218</span>
+<h5 class="test-status text-fail">dashboardDataDrivenTest</h5>
+<span class='badge badge-success'>05.13.2026 9:55:15 PM</span>
+<span class='badge badge-danger'>05.13.2026 9:55:24 PM</span>
+<span class='badge badge-default'>00:00:09:063</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -259,23 +312,38 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:35:01 PM</td>
+        <td>9:55:15 PM</td>
+        <td>
+          Running Test Case: TC_DASH_004
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:55:15 PM</td>
         <td>
           Start of tc_login
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:35:04 PM</td>
+        <td>9:55:24 PM</td>
         <td>
-          Login error: Invalid email or password
+          End of tc_login
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>10:35:04 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>9:55:24 PM</td>
         <td>
-          End of tc_login
+          Books section validation failed: no such element: Unable to locate element: {"method":"xpath","selector":"//h2[contains(text(),'Available Books')]"}
+  (Session info: chrome=148.0.7778.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e589e2c33162df70eed885a1adc25c92, findElement {using=xpath, value=//h2[contains(text(),'Available Books')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.98, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\WW\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63340}, goog:processID: 9180, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63340/devtoo..., se:cdpVersion: 148.0.7778.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e589e2c33162df70eed885a1adc25c92
         </td>
       </tr>
   </tbody>
@@ -290,7 +358,7 @@
           <div class="test-detail">
             <p class="name">dashboardDataDrivenTest</p>
             <p class="text-sm">
-              <span>10:35:28 PM</span> / <span>00:00:03:258</span>
+              <span>9:55:32 PM</span> / <span>00:03:36:808</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -299,9 +367,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">dashboardDataDrivenTest</h5>
-<span class='badge badge-success'>05.04.2026 10:35:28 PM</span>
-<span class='badge badge-danger'>05.04.2026 10:35:31 PM</span>
-<span class='badge badge-default'>00:00:03:258</span>
+<span class='badge badge-success'>05.13.2026 9:55:32 PM</span>
+<span class='badge badge-danger'>05.13.2026 9:59:09 PM</span>
+<span class='badge badge-default'>00:03:36:808</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -313,16 +381,16 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:35:28 PM</td>
+        <td>9:55:32 PM</td>
         <td>
-          Start of tc_login
+          Running Test Case: TC_DASH_005
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:35:31 PM</td>
+        <td>9:59:09 PM</td>
         <td>
-          End of tc_login
+          Start of tc_login
         </td>
       </tr>
   </tbody>
@@ -330,25 +398,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="6"
+        <li class="test-item"  status="fail" test-id="6"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">dashboardDataDrivenTest</p>
             <p class="text-sm">
-              <span>10:35:52 PM</span> / <span>00:00:03:409</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>10:00:05 PM</span> / <span>00:00:06:243</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">dashboardDataDrivenTest</h5>
-<span class='badge badge-success'>05.04.2026 10:35:52 PM</span>
-<span class='badge badge-danger'>05.04.2026 10:35:55 PM</span>
-<span class='badge badge-default'>00:00:03:409</span>
+<h5 class="test-status text-fail">dashboardDataDrivenTest</h5>
+<span class='badge badge-success'>05.13.2026 10:00:05 PM</span>
+<span class='badge badge-danger'>05.13.2026 10:00:11 PM</span>
+<span class='badge badge-default'>00:00:06:243</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -360,16 +428,38 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:35:52 PM</td>
+        <td>10:00:05 PM</td>
+        <td>
+          Running Test Case: TC_DASH_006
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:00:07 PM</td>
         <td>
           Start of tc_login
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:35:55 PM</td>
+        <td>10:00:11 PM</td>
         <td>
           End of tc_login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:00:11 PM</td>
+        <td>
+          Genre filter failed: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(text(),'Genre')]"}
+  (Session info: chrome=148.0.7778.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [84f0b422b833efe8ce9a76cc68ec5ffd, findElement {using=xpath, value=//button[contains(text(),'Genre')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.98, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\WW\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63405}, goog:processID: 1188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63405/devtoo..., se:cdpVersion: 148.0.7778.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 84f0b422b833efe8ce9a76cc68ec5ffd
         </td>
       </tr>
   </tbody>
@@ -377,25 +467,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="7"
+        <li class="test-item"  status="fail" test-id="7"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">dashboardDataDrivenTest</p>
             <p class="text-sm">
-              <span>10:36:11 PM</span> / <span>00:00:03:119</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>10:00:33 PM</span> / <span>00:00:03:722</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">dashboardDataDrivenTest</h5>
-<span class='badge badge-success'>05.04.2026 10:36:11 PM</span>
-<span class='badge badge-danger'>05.04.2026 10:36:14 PM</span>
-<span class='badge badge-default'>00:00:03:119</span>
+<h5 class="test-status text-fail">dashboardDataDrivenTest</h5>
+<span class='badge badge-success'>05.13.2026 10:00:33 PM</span>
+<span class='badge badge-danger'>05.13.2026 10:00:37 PM</span>
+<span class='badge badge-default'>00:00:03:722</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -407,23 +497,38 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:36:11 PM</td>
+        <td>10:00:33 PM</td>
+        <td>
+          Running Test Case: TC_DASH_007
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:00:33 PM</td>
         <td>
           Start of tc_login
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:36:14 PM</td>
+        <td>10:00:37 PM</td>
         <td>
-          Login error: Invalid email or password
+          End of tc_login
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>10:36:14 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:00:37 PM</td>
         <td>
-          End of tc_login
+          Author filter failed: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(text(),'Author')]"}
+  (Session info: chrome=148.0.7778.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4db259f3845a82e8f1271dba8d6efcad, findElement {using=xpath, value=//button[contains(text(),'Author')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.98, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\WW\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63440}, goog:processID: 4576, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63440/devtoo..., se:cdpVersion: 148.0.7778.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4db259f3845a82e8f1271dba8d6efcad
         </td>
       </tr>
   </tbody>
@@ -431,25 +536,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="8"
+        <li class="test-item"  status="fail" test-id="8"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">dashboardDataDrivenTest</p>
             <p class="text-sm">
-              <span>10:36:38 PM</span> / <span>00:00:03:199</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>10:00:58 PM</span> / <span>00:00:08:452</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">dashboardDataDrivenTest</h5>
-<span class='badge badge-success'>05.04.2026 10:36:38 PM</span>
-<span class='badge badge-danger'>05.04.2026 10:36:42 PM</span>
-<span class='badge badge-default'>00:00:03:199</span>
+<h5 class="test-status text-fail">dashboardDataDrivenTest</h5>
+<span class='badge badge-success'>05.13.2026 10:00:58 PM</span>
+<span class='badge badge-danger'>05.13.2026 10:01:06 PM</span>
+<span class='badge badge-default'>00:00:08:452</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -461,16 +566,38 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:36:39 PM</td>
+        <td>10:00:58 PM</td>
+        <td>
+          Running Test Case: TC_DASH_008
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:00:59 PM</td>
         <td>
           Start of tc_login
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:36:42 PM</td>
+        <td>10:01:06 PM</td>
         <td>
           End of tc_login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:01:06 PM</td>
+        <td>
+          View book failed: no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(@class,'book')]"}
+  (Session info: chrome=148.0.7778.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4d1e3a2b9d5ac3d78f171b8a822c3ae6, findElement {using=xpath, value=//div[contains(@class,'book')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.98, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\WW\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63472}, goog:processID: 14120, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63472/devtoo..., se:cdpVersion: 148.0.7778.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4d1e3a2b9d5ac3d78f171b8a822c3ae6
         </td>
       </tr>
   </tbody>
@@ -478,25 +605,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="9"
+        <li class="test-item"  status="fail" test-id="9"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">dashboardDataDrivenTest</p>
             <p class="text-sm">
-              <span>10:37:07 PM</span> / <span>00:00:03:570</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>10:01:23 PM</span> / <span>00:00:13:845</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">dashboardDataDrivenTest</h5>
-<span class='badge badge-success'>05.04.2026 10:37:07 PM</span>
-<span class='badge badge-danger'>05.04.2026 10:37:11 PM</span>
-<span class='badge badge-default'>00:00:03:570</span>
+<h5 class="test-status text-fail">dashboardDataDrivenTest</h5>
+<span class='badge badge-success'>05.13.2026 10:01:23 PM</span>
+<span class='badge badge-danger'>05.13.2026 10:01:37 PM</span>
+<span class='badge badge-default'>00:00:13:845</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -508,16 +635,38 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:37:08 PM</td>
+        <td>10:01:23 PM</td>
+        <td>
+          Running Test Case: TC_DASH_009
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:01:24 PM</td>
         <td>
           Start of tc_login
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:37:11 PM</td>
+        <td>10:01:36 PM</td>
         <td>
           End of tc_login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:01:37 PM</td>
+        <td>
+          Borrow failed: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(text(),'Borrow')]"}
+  (Session info: chrome=148.0.7778.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1b9f68b41144b14d785c0e08963a4439, findElement {using=xpath, value=//button[contains(text(),'Borrow')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.98, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\WW\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63502}, goog:processID: 2024, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63502/devtoo..., se:cdpVersion: 148.0.7778.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1b9f68b41144b14d785c0e08963a4439
         </td>
       </tr>
   </tbody>
@@ -525,25 +674,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="10"
+        <li class="test-item"  status="fail" test-id="10"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">dashboardDataDrivenTest</p>
             <p class="text-sm">
-              <span>10:37:41 PM</span> / <span>00:00:03:311</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>10:01:49 PM</span> / <span>00:00:05:982</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">dashboardDataDrivenTest</h5>
-<span class='badge badge-success'>05.04.2026 10:37:41 PM</span>
-<span class='badge badge-danger'>05.04.2026 10:37:44 PM</span>
-<span class='badge badge-default'>00:00:03:311</span>
+<h5 class="test-status text-fail">dashboardDataDrivenTest</h5>
+<span class='badge badge-success'>05.13.2026 10:01:49 PM</span>
+<span class='badge badge-danger'>05.13.2026 10:01:55 PM</span>
+<span class='badge badge-default'>00:00:05:982</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -555,63 +704,38 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:37:41 PM</td>
+        <td>10:01:49 PM</td>
+        <td>
+          Running Test Case: TC_DASH_010
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:01:49 PM</td>
         <td>
           Start of tc_login
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>10:37:44 PM</td>
+        <td>10:01:55 PM</td>
         <td>
           End of tc_login
         </td>
       </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="11"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">verifyDashboard</p>
-            <p class="text-sm">
-              <span>10:38:16 PM</span> / <span>00:00:03:415</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">verifyDashboard</h5>
-<span class='badge badge-success'>05.04.2026 10:38:16 PM</span>
-<span class='badge badge-danger'>05.04.2026 10:38:19 PM</span>
-<span class='badge badge-default'>00:00:03:415</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>10:38:16 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:01:55 PM</td>
         <td>
-          Start of tc_login
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>10:38:19 PM</td>
-        <td>
-          End of tc_login
+          Pagination failed: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(text(),'Next')]"}
+  (Session info: chrome=148.0.7778.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [12259dc94f4cc1397ce5dd11af2acd29, findElement {using=xpath, value=//button[contains(text(),'Next')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.98, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\WW\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63535}, goog:processID: 15376, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63535/devtoo..., se:cdpVersion: 148.0.7778.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 12259dc94f4cc1397ce5dd11af2acd29
         </td>
       </tr>
   </tbody>
@@ -633,25 +757,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>May 4, 2026 10:32:23 PM</h3>
+<h3>May 13, 2026 09:53:13 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>May 4, 2026 10:38:24 PM</h3>
+<h3>May 13, 2026 10:01:59 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>11</h3>
+<h3>1</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>9</h3>
 </div></div>
 </div>
 </div>
@@ -667,12 +791,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>11</b> tests passed
+<div><small data-tooltip='10%'>
+<b>1</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='90%'><b>9</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -692,8 +816,8 @@
 <div class="card-footer">
 <div><small data-tooltip='0%'><b>0</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>26</b> others
+<small data-tooltip='23%'><b>9</b> events failed,
+<b data-tooltip='%'>29</b> others
 </small>
 </div>
 </div>
@@ -709,7 +833,7 @@
 </div></div>
 <script>
 var timeline = {
-"dashboardDataDrivenTest":5.943,"dashboardDataDrivenTest":3.337,"dashboardDataDrivenTest":4.018,"dashboardDataDrivenTest":3.218,"dashboardDataDrivenTest":3.258,"dashboardDataDrivenTest":3.409,"dashboardDataDrivenTest":3.119,"dashboardDataDrivenTest":3.199,"dashboardDataDrivenTest":3.57,"dashboardDataDrivenTest":3.311,"verifyDashboard":3.415
+"dashboardDataDrivenTest":5.193,"dashboardDataDrivenTest":16.748,"dashboardDataDrivenTest":14.753,"dashboardDataDrivenTest":9.063,"dashboardDataDrivenTest":216.808,"dashboardDataDrivenTest":6.243,"dashboardDataDrivenTest":3.722,"dashboardDataDrivenTest":8.452,"dashboardDataDrivenTest":13.845,"dashboardDataDrivenTest":5.982
 };
 </script>
 <div class="row">
@@ -718,8 +842,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 11,
-failParent: 0,
+passParent: 1,
+failParent: 9,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -736,10 +860,10 @@ skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
 passEvents: 0,
-failEvents: 0,
+failEvents: 9,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 26
+infoEvents: 29
 };
 </script>        </div>
       </div>
